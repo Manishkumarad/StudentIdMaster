@@ -30,12 +30,45 @@ const allergies = [
 ];
 
 const classOptions = [
+  // Primary Classes (1-5)
   { value: "1A", label: "Class 1 - Section A" },
   { value: "1B", label: "Class 1 - Section B" },
   { value: "2A", label: "Class 2 - Section A" },
   { value: "2B", label: "Class 2 - Section B" },
   { value: "3A", label: "Class 3 - Section A" },
   { value: "3B", label: "Class 3 - Section B" },
+  { value: "4A", label: "Class 4 - Section A" },
+  { value: "4B", label: "Class 4 - Section B" },
+  { value: "5A", label: "Class 5 - Section A" },
+  { value: "5B", label: "Class 5 - Section B" },
+  
+  // Middle School (6-8)
+  { value: "6A", label: "Class 6 - Section A" },
+  { value: "6B", label: "Class 6 - Section B" },
+  { value: "7A", label: "Class 7 - Section A" },
+  { value: "7B", label: "Class 7 - Section B" },
+  { value: "8A", label: "Class 8 - Section A" },
+  { value: "8B", label: "Class 8 - Section B" },
+  
+  // High School (9-10)
+  { value: "9A", label: "Class 9 - Section A" },
+  { value: "9B", label: "Class 9 - Section B" },
+  { value: "10A", label: "Class 10 - Section A" },
+  { value: "10B", label: "Class 10 - Section B" },
+  
+  // Higher Secondary (11-12)
+  { value: "11SC", label: "Class 11 - Science" },
+  { value: "11COM", label: "Class 11 - Commerce" },
+  { value: "11ARTS", label: "Class 11 - Arts" },
+  { value: "12SC", label: "Class 12 - Science" },
+  { value: "12COM", label: "Class 12 - Commerce" },
+  { value: "12ARTS", label: "Class 12 - Arts" },
+  
+  // B.Tech Years
+  { value: "BTECH1", label: "B.Tech - 1st Year" },
+  { value: "BTECH2", label: "B.Tech - 2nd Year" },
+  { value: "BTECH3", label: "B.Tech - 3rd Year" },
+  { value: "BTECH4", label: "B.Tech - 4th Year" },
 ];
 
 const busRoutes = [
