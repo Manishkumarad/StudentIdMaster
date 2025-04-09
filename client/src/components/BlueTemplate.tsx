@@ -10,10 +10,10 @@ const BlueTemplate = ({ formData, qrCode }: BlueTemplateProps) => {
   return (
     <div className="card-template-1 w-full max-w-sm mx-auto rounded-lg overflow-hidden shadow-lg bg-gradient-to-r from-blue-600 to-blue-700">
       {/* Card Header */}
-      <div className="p-4 bg-blue-700 text-white">
+      <div className="p-4 bg-blue-700">
         <div className="flex justify-between items-start">
           <div>
-            <h3 className="text-lg font-bold uppercase tracking-wider">Unity School</h3>
+            <h3 className="text-lg font-bold uppercase tracking-wider text-white">Unity School</h3>
             <p className="text-xs text-blue-200">Student Identification Card</p>
           </div>
           <div className="bg-white p-1 rounded">
@@ -84,8 +84,8 @@ const BlueTemplate = ({ formData, qrCode }: BlueTemplateProps) => {
       )}
       
       {/* Card Footer */}
-      <div className="p-4 bg-blue-600 text-white flex items-center justify-between">
-        <div className="text-xs">
+      <div className="p-4 bg-blue-600 flex items-center justify-between">
+        <div className="text-xs text-white">
           <p>Valid for Academic Year {new Date().getFullYear()}-{new Date().getFullYear() + 1}</p>
           <p>ID: UNITY-{formData.rollNumber}</p>
         </div>

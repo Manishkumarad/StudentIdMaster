@@ -42,10 +42,46 @@ const IDCardPreview = ({
     }
 
     try {
+      // Apply temporary styling to ensure text is visible in PNG
+      const tempStyleElement = document.createElement('style');
+      tempStyleElement.textContent = `
+        /* Change all text to black for better visibility */
+        .card-template-1 *, .card-template-2 * {
+          color: #000000 !important;
+        }
+        
+        /* Set all backgrounds to white */
+        .card-template-1, 
+        .card-template-2,
+        .card-template-1 div,
+        .card-template-2 div {
+          background-color: white !important;
+          background-image: none !important;
+        }
+        
+        /* Keep special colored text like allergies */
+        .text-red-600, .text-red-800 {
+          color: #dc2626 !important;
+        }
+        
+        /* Maintain border visibility */
+        .border-blue-500, .border-blue-300, .border-red-200 {
+          border-color: #3b82f6 !important;
+        }
+      `;
+      document.head.appendChild(tempStyleElement);
+      
+      // Generate PNG with the fixed text colors
       const dataUrl = await toPng(cardRef.current, {
         quality: 0.95,
         backgroundColor: "white",
+        style: {
+          color: "black",
+        },
       });
+      
+      // Remove the temporary styling
+      document.head.removeChild(tempStyleElement);
       
       // Create download link
       const link = document.createElement("a");
@@ -55,7 +91,7 @@ const IDCardPreview = ({
       
       toast({
         title: "Download successful",
-        description: "ID card has been downloaded as PNG",
+        description: "ID card has been downloaded as PNG with improved text visibility",
       });
     } catch (error) {
       toast({
