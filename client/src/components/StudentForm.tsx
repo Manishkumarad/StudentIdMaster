@@ -27,6 +27,13 @@ const allergies = [
   { id: "eggs", label: "Eggs" },
   { id: "gluten", label: "Gluten" },
   { id: "seafood", label: "Seafood" },
+  { id: "soy", label: "Soy" },
+  { id: "wheat", label: "Wheat" },
+  { id: "shellfish", label: "Shellfish" },
+  { id: "peanuts", label: "Peanuts" },
+  { id: "treenuts", label: "Tree Nuts" },
+  { id: "latex", label: "Latex" },
+  { id: "medications", label: "Medications" },
 ];
 
 const classOptions = [

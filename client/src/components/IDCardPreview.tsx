@@ -60,13 +60,19 @@ const IDCardPreview = ({
         }
         
         /* Keep special colored text like allergies */
-        .text-red-600, .text-red-800 {
-          color: #dc2626 !important;
+        .text-purple-700, .text-purple-800, .text-indigo-600, .text-indigo-700 {
+          color: #5b21b6 !important;
         }
         
         /* Maintain border visibility */
-        .border-blue-500, .border-blue-300, .border-red-200 {
+        .border-blue-500, .border-blue-300, .border-purple-200 {
           border-color: #3b82f6 !important;
+        }
+        
+        /* Style background of medical alert sections */
+        .bg-purple-100, .bg-indigo-100 {
+          background-color: #f5f3ff !important;
+          border-color: #c4b5fd !important;
         }
       `;
       document.head.appendChild(tempStyleElement);
