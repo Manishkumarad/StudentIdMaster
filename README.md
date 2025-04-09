@@ -2,7 +2,7 @@
 
 A professional ReactJS application for generating customizable student identification cards with comprehensive information and modern design.
 
-![Student ID Card Generator](screenshots/preview.png)
+![Student ID Card Generator](./Home.png)
 
 ## 🚀 Features
 
@@ -67,32 +67,69 @@ A professional ReactJS application for generating customizable student identific
 7. View saved cards for later reference
 
 ## 🗂️ Project Structure
-
 ```
+STUDENTIDMASTER/
 ├── client/
 │   ├── src/
-│   │   ├── assets/           # Static assets
-│   │   ├── components/       # React components
-│   │   │   ├── ui/           # Generic UI components
-│   │   │   ├── BlueTemplate.tsx
-│   │   │   ├── WhiteTemplate.tsx
-│   │   │   ├── StudentForm.tsx
-│   │   │   └── IDCardPreview.tsx
-│   │   ├── lib/              # Utility functions
-│   │   ├── pages/            # Page components
-│   │   ├── types/            # TypeScript type definitions
-│   │   ├── App.tsx           # Main application component
-│   │   └── main.tsx          # Entry point
+│   │   ├── assets/
+│   │   │   └── default-profile.svg
+│   │   ├── components/
+│   │   │   └── ui/
+│   │   │       ├── BlueTemplate.tsx
+│   │   │       ├── IDCardPreview.tsx
+│   │   │       ├── SavedCards.tsx
+│   │   │       ├── StudentForm.tsx
+│   │   │       └── WhiteTemplate.tsx
+│   │   ├── hooks/
+│   │   │   ├── use-mobile.ts
+│   │   │   └── use-toast.ts
+│   │   ├── lib/
+│   │   │   ├── localStorageUtils.ts
+│   │   │   ├── queryClient.ts
+│   │   │   └── utils.ts
+│   │   ├── pages/
+│   │   │   ├── home.tsx
+│   │   │   └── not-found.tsx
+│   │   ├── types/
+│   │   │   └── index.ts
+│   │   ├── App.tsx
+│   │   ├── index.css
+│   │   ├── main.tsx
+│   │   └── index.html
+│   └── screenshots/
+│       └── .gitkeep
 ├── server/
-│   ├── routes.ts             # API routes
-│   ├── storage.ts            # Data storage interface
-│   ├── db.ts                 # Database connection
-│   └── index.ts              # Server entry point
-├── shared/
-│   └── schema.ts             # Shared data schema
-├── uploads/                  # Photo upload storage
-├── tailwind.config.ts        # Tailwind configuration
-└── tsconfig.json             # TypeScript configuration
+│   ├── routes.ts
+│   ├── storage.ts
+│   ├── vite.ts
+│   ├── shared/
+│   │   └── schema.ts
+│   └── uploads/
+│       └── .gitkeep
+├── .editorconfig
+├── .gitignore
+├── .prettierrc
+├── .replit
+├── create-commit-history.sh
+├── deep-clean.js
+├── DEPLOYMENT.md
+├── DEVELOPMENT_TIMELINE.md
+├── drizzle.config.ts
+├── generated-icon.png
+├── LICENSE
+├── package-lock.json
+├── package.json
+├── package.json.github
+├── postcss.config.js
+├── prepare-for-job-submission.sh
+├── PRESENTATION_GUIDE.md
+├── README.md
+├── replit.nix
+├── restructure.sh
+├── setup-github.sh
+├── tailwind.config.ts
+├── theme.json
+└── tsconfig.json
 ```
 
 ## 🔧 API Endpoints
@@ -132,4 +169,4 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ---
 
-Developed with ❤️ by [Your Name]
+Developed with ❤️ by Manish Kumar
