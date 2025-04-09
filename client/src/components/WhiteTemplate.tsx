@@ -69,7 +69,7 @@ const WhiteTemplate = ({ formData, qrCode }: WhiteTemplateProps) => {
           </div>
           {formData.allergies.length > 0 && (
             <div className="flex flex-col">
-              <span className="text-indigo-600 font-bold">Medical Alert</span>
+              <span className="text-indigo-600 font-bold">Allergies</span>
               <span className="font-medium text-indigo-700">{formData.allergies.join(', ')}</span>
             </div>
           )}

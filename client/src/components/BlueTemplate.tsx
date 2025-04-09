@@ -77,7 +77,7 @@ const BlueTemplate = ({ formData, qrCode }: BlueTemplateProps) => {
       {formData.allergies.length > 0 && (
         <div className="px-4 py-2 bg-purple-100 border-t border-b border-purple-200">
           <div className="flex items-center">
-            <span className="text-purple-700 font-bold text-sm mr-2">Medical Alert:</span>
+            <span className="text-purple-700 font-bold text-sm mr-2">Allergies:</span>
             <span className="text-purple-800 text-sm">{formData.allergies.join(', ')}</span>
           </div>
         </div>
