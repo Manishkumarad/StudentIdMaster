@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import { StudentData, CardTemplate } from "@/types";
 import { Button } from "@/components/ui/button";
 import { QRCodeSVG } from "qrcode.react";
@@ -20,6 +20,12 @@ const IDCardPreview = ({
 }: IDCardPreviewProps) => {
   const cardRef = useRef<HTMLDivElement>(null);
   const { toast } = useToast();
+  
+  // Log status for debugging
+  useEffect(() => {
+    console.log("Preview render - hasSubmitted:", hasSubmitted);
+    console.log("Current form data:", formData);
+  }, [hasSubmitted, formData]);
 
   // Function to download card as PNG
   const handleDownloadCard = async () => {
@@ -119,6 +125,23 @@ const IDCardPreview = ({
     busRoute: formData.busRoute,
   });
 
+  // Don't show the card if not submitted or if form is empty
+  if (!hasSubmitted && !formData.name) {
+    return (
+      <div className="lg:w-1/2">
+        <div className="bg-gray-100 p-5 rounded-lg h-full flex flex-col justify-center items-center">
+          <div className="text-center p-10">
+            <h2 className="text-xl font-semibold text-gray-800 mb-4">ID Card Preview</h2>
+            <p className="text-gray-500 mb-4">Fill out the form and click "Generate ID Card" to see your ID card preview here.</p>
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-16 w-16 mx-auto text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M3 10h18M3 14h18m-9-4v8m-7 0h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+            </svg>
+          </div>
+        </div>
+      </div>
+    );
+  }
+  
   return (
     <div className="lg:w-1/2">
       <div className="bg-gray-100 p-5 rounded-lg">

@@ -157,22 +157,30 @@ const StudentForm = ({
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
+    console.log("Form submission attempted");
     
-    // Basic validation
-    if (!formData.name || !formData.rollNumber || !formData.classDiv || !formData.rackNumber || !formData.busRoute) {
+    // Comprehensive validation
+    const errors = [];
+    
+    if (!formData.name.trim()) errors.push("Full Name is required");
+    if (!formData.rollNumber.trim()) errors.push("Roll Number is required");
+    if (!formData.classDiv) errors.push("Class & Division selection is required");
+    if (!formData.rackNumber.trim()) errors.push("Rack Number is required");
+    if (!formData.busRoute) errors.push("Bus Route selection is required");
+    if (!formData.photo && !formData.photoUrl) errors.push("Student Photo is required");
+    
+    // Show all validation errors if any
+    if (errors.length > 0) {
       toast({
         variant: "destructive",
         title: "Missing information",
-        description: "Please fill in all required fields",
-      });
-      return;
-    }
-
-    if (!formData.photo) {
-      toast({
-        variant: "destructive",
-        title: "Missing photo",
-        description: "Please upload a student photo",
+        description: (
+          <ul className="list-disc pl-4 mt-2">
+            {errors.map((error, index) => (
+              <li key={index}>{error}</li>
+            ))}
+          </ul>
+        ),
       });
       return;
     }
@@ -191,6 +199,7 @@ const StudentForm = ({
     
     // Set submitted state to trigger card preview
     setHasSubmitted(true);
+    console.log("Setting hasSubmitted to true");
     
     toast({
       title: "ID Card Generated",

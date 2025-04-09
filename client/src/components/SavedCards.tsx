@@ -10,6 +10,7 @@ interface SavedCardsProps {
   savedCards: StudentData[];
   setSavedCards: (cards: StudentData[]) => void;
   setFormData: (data: StudentData) => void;
+  setHasSubmitted?: (value: boolean) => void;
 }
 
 const SavedCards = ({
@@ -17,6 +18,7 @@ const SavedCards = ({
   savedCards,
   setSavedCards,
   setFormData,
+  setHasSubmitted,
 }: SavedCardsProps) => {
   const { toast } = useToast();
 
@@ -24,9 +26,17 @@ const SavedCards = ({
 
   const handleLoadSavedCard = (card: StudentData) => {
     setFormData(card);
+    
+    // Set hasSubmitted to true if the callback is provided
+    // This ensures the card preview is displayed immediately
+    if (setHasSubmitted) {
+      console.log("Setting hasSubmitted to true from SavedCards");
+      setHasSubmitted(true);
+    }
+    
     toast({
       title: "Card loaded",
-      description: "The saved card has been loaded for editing",
+      description: "The saved card has been loaded and ready to view or edit",
     });
   };
 

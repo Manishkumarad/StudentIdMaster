@@ -22,6 +22,20 @@ const Home = () => {
   const [savedCards, setSavedCards] = useState<StudentData[]>([]);
   const [hasSubmitted, setHasSubmitted] = useState(false);
 
+  // Debug logs to track state changes
+  useEffect(() => {
+    console.log("Home component - hasSubmitted changed:", hasSubmitted);
+  }, [hasSubmitted]);
+
+  // Reset hasSubmitted when formData changes significantly
+  useEffect(() => {
+    // If name or roll number changes after submission, reset the hasSubmitted flag
+    if (hasSubmitted && (formData.name === "" || formData.rollNumber === "")) {
+      console.log("Resetting hasSubmitted due to major form data change");
+      setHasSubmitted(false);
+    }
+  }, [formData, hasSubmitted]);
+
   useEffect(() => {
     // Load saved cards from localStorage
     setSavedCards(getSavedCards());
@@ -60,6 +74,7 @@ const Home = () => {
           savedCards={savedCards}
           setSavedCards={setSavedCards}
           setFormData={setFormData}
+          setHasSubmitted={setHasSubmitted}
         />
       </main>
 
